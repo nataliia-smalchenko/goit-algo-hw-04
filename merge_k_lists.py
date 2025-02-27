@@ -44,7 +44,7 @@ def merge_k_lists(lists):
         
     
 
-lists = [[1, 4, 5], [1, 3, 4], [2, 6], [1, 4, 7, 9], [2, 3, 4], [2, 5, 8, 9], [1, 3, 5]]
-merged_list = merge_k_lists(lists)
+my_lists = [[1, 4, 5], [1, 3, 4], [2, 6], [1, 4, 7, 9], [2, 3, 4], [2, 5, 8, 9], [1, 3, 5]]
+merged_list = merge_k_lists(my_lists)
 print("Відсортований список:", merged_list)
 # Відсортований список: [1, 1, 2, 3, 4, 4, 5, 6]

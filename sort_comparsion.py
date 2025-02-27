@@ -1,13 +1,14 @@
 import timeit
 import random
 
+
 def insertion_sort(lst):
     for i in range(1, len(lst)):
         key = lst[i]
         j = i-1
         while j >=0 and key < lst[j] :
-                lst[j+1] = lst[j]
-                j -= 1
+            lst[j+1] = lst[j]
+            j -= 1
         lst[j+1] = key 
     return lst
 
@@ -109,8 +110,8 @@ n = 100000
 
 for numbers in lists:
     print("List: ", numbers)
-    print("Insertion sort: ", timeit.timeit(lambda: insertion_sort(numbers)), n)
-    print("Merge iterative sort: ", timeit.timeit(lambda: merge_sort_bottom_up(numbers)), n)
-    print("Merge recursive sort: ", timeit.timeit(lambda: merge_sort(numbers)), n)
-    print("Timsort: ", timeit.timeit(lambda: sorted(numbers)), n)
+    print("Insertion sort: ", timeit.timeit(lambda numbers_copy=numbers: insertion_sort(list(numbers_copy))), n)
+    print("Merge iterative sort: ", timeit.timeit(lambda numbers_copy=numbers: merge_sort_bottom_up(list(numbers_copy))), n)
+    print("Merge recursive sort: ", timeit.timeit(lambda numbers_copy=numbers: merge_sort(list(numbers_copy))), n)
+    print("Timsort: ", timeit.timeit(lambda numbers_copy=numbers: sorted(list(numbers_copy))), n)
     print()
